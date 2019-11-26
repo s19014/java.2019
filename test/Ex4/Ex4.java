@@ -1,15 +1,16 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 class Ex4{
 
 	public int [] ex4_1(int [] a){
-		
+		Arrays.sort(a);
 		return a;
-
 	}
 
 	public int [] ex4_2(int [] a){
-		
 		return a;
 
 	}
@@ -17,20 +18,26 @@ class Ex4{
 	public String [] ex4_3(int [] a){
 		
 		String [] hantei = {"dummy"};
-		
+	
 		return hantei;
 
 	}
 
 	public int ex4_4(int a){
+        int answer = String.valueOf(a).length();
 		
-		return -1;
+		return answer;
 
 	}
 
 	public int ex4_5(int a){
+        int num = a + 1;
+        int answer = 0;
+        for(int i=0; i<num; i++){
+            answer += i;
+        }
 		
-		return -1;
+		return answer;
 
 	}
 
@@ -51,6 +58,9 @@ class Ex4{
 	public int ex4_8(int [] a){
 		
 		int ret = 0;
+        for(int i=0; i<a.length; i++){
+            ret += a[i];
+        }
 		
 		return ret;
 
@@ -59,9 +69,10 @@ class Ex4{
 	public int ex4_9(int [] a){
 		
 		int ret = 0;
-		
-		return ret;
-
+        for(int i=0; i<a.length; i++){
+            ret += a[i];
+        }
+        int answer = (int)(Math.floor(ret / a.length));
+        return answer;
 	}
 }
-
