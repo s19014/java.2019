@@ -11,14 +11,30 @@ class Ex4{
 	}
 
 	public int [] ex4_2(int [] a){
-		return a;
+		Arrays.sort(a);
+        int[] nums = new int[a.length];
 
+        for(int i=0; i < a.length; i++){
+            nums[i] = a[a.length -1 -i];
+        }
+        for(int i=0; i < a.length; i++){
+            a[i] = nums[i];
+        }
+        return a;
 	}
 
 	public String [] ex4_3(int [] a){
 		
-		String [] hantei = {"dummy"};
-	
+		String [] hantei = new String[a.length];
+        for(int i=0; i < a.length; i++){
+            if(a[i] < 0){
+                hantei[i] = "負";
+            }else if(a[i] > 0){
+                hantei[i] = "正";
+            }else{
+                hantei[i] = "零";
+            } 
+        }
 		return hantei;
 
 	}
@@ -42,16 +58,19 @@ class Ex4{
 	}
 
 	public int [] ex4_6(int a){
-		
-		int [] ret = new int[1];
-		
+        int[] ret = new int[1];
 		return ret;
-
-	}
+    }
 
 	public boolean ex4_7(int a){
+        int count = 0;
+        for(int i=2; i < a+1; i++){
+            if(a % i == 0){
+                count += 1;
+            }
+        }
 		
-		return false;
+		return count == 1;
 
 	}
 
@@ -67,12 +86,7 @@ class Ex4{
 	}
 
 	public int ex4_9(int [] a){
-		
-		int ret = 0;
-        for(int i=0; i<a.length; i++){
-            ret += a[i];
-        }
-        int answer = (int)(Math.floor(ret / a.length));
-        return answer;
-	}
+        int ret = 0;
+        return ret;
+    }
 }
